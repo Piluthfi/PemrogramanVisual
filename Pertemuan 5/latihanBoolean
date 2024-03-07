@@ -1,0 +1,69 @@
+#Caes_1
+print("Case 1")
+#Data bertipe Boolean yang Kita Deklariskan (Cara Standar)
+a = bool(True)
+b = bool(False)
+print(a)
+print(b)
+print("======================================")
+
+#Case 2
+print("Case 2")
+#Data Bertipe Boolesan Dalam Berbagai Konteks
+#Tercatat Dengan Sendirinya oleh Komputer tanpa Deklarasi.
+print(1>2)
+print(7+3==11)
+print(4<7)
+print("======================================")
+
+# Case 3
+print("Case 3")
+a = 21
+b = 20
+if (a < b):
+  print("variabel a lebih kecil dari variabel b")
+elif (a > b):
+  print("variabel a lebih besar dari variabel b")
+else:
+  print("variabel a sama dengan b")
+
+#PART 2
+#Case 4
+print("Case 4")
+#Semua data yang tidak no (kosong)  memiliki nilai Boolean True
+a = 5                                                             #integer
+b = "Saya mengerjakan latihan."                                   #string
+c = ("pulpen", "handphone", "kertas")                             #tuple
+d = ["pulpen", "handphone", "kertas"]                             #list
+e = {"pulpen":"standard", "handphone":"samsung", "kertas": "hvs"} #dictionary
+f = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}                                #set
+print(bool(a))
+print(bool(b))
+print(bool(c))
+print(bool(d))
+print(bool(e))
+print(bool(f))
+print("======================================")
+
+#PART 3
+#Case 5
+print("Case 5")
+#Variabel yang kosong memiliki nilai Boolean False
+a = 0                                             #integer null
+b = ""                                            #string kosong
+c = ()                                            #tuple kosong
+d = []                                            #list kosong
+e = {}                                            #dicitionary/set kosong
+print(bool(a))
+print(bool(b))
+print(bool(c))
+print(bool(d))
+print(bool(e))
+print("======================================")
+
+#Case 6
+print("Case 6")
+x = a and b
+y = a or b
+z = not a
+print(x, y, z)
