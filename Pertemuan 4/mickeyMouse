@@ -1,0 +1,38 @@
+print("\033c")      #To close all
+#Import libraries
+import matplotlib.pyplot as plt
+import numpy as np
+
+#Tentukan wilayah (domain) diagram Cartesian dan rasio lebar dan tinggi diagram
+x = np.linspace(-12,12,10000)
+plt.figure(figsize=(8,6.5))
+
+#Tentukan persamaan  matematika yang diinginkan
+y = x -x -0
+
+y3 = 5 + (20-(x-5)**2)**0.5
+y4 = 5 - (20-(x-5)**2)**0.5
+
+y5 = 9 + (2-(x-9)**2)**0.5
+y6 = 9 - (2-(x-9)**2)**0.5
+
+y7 = 9 + (2-(x-1)**2)**0.5
+y8 = 9 - (2-(x-1)**2)**0.5
+
+# y9 = 7 + (2-(x-3)**2)**0.5
+# y10 = 7 - (2-(x-3)**2)**0.5
+#
+# y11 = 7 + (2-(x-7)**2)**0.5
+# y12 = 7 - (2-(x-7)**2)**0.5
+
+plt.fill_between(x, y3, y4, color='black', alpha=1)
+plt.fill_between(x, y5, y6, color='black', alpha=1)
+plt.fill_between(x, y7, y8, color='black', alpha=1)
+# plt.fill_between(x, y9, '-y', label='y9, y10')
+# plt.fill_between(x, y10, '-y')
+# plt.fill_between(x, y11, '-y', label='y9, y10')
+# plt.fill_between(x, y12, '-y')
+
+plt.legend(loc='upper center')
+plt.grid()
+plt.show()
