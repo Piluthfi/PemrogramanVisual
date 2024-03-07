@@ -1,0 +1,21 @@
+# Membuat set dengan kurung kurawal
+sets_1 = {"sandal", "sepatu", "meja", "kursi"}
+print(sets_1)
+
+# Membuat set dengan fungsi set()
+sets_2 = set(["sandal", "sepatu", "meja", "kursi"])
+print(sets_2)
+
+# Menambahkan anggota baru ke set dengan add()
+sets_1.add("pulpen")
+print(sets_1)
+
+# Menambahkan beberapa anggota baru ke set dengan update()
+sets_2.update(["pensil", "kertas", "baju"])
+print(sets_2)
+
+# Menghapus anggota dari set dengan remove() atau discard()
+sets_1.remove("sepatu")
+sets_2.discard("kertas")
+print(sets_1)
+print(sets_2)
