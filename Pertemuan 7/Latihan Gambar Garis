@@ -1,0 +1,35 @@
+print("\033c")      #To close all
+import numpy as np
+import matplotlib.pyplot as plt
+
+#The user informs the coordinates of the two points for the line
+x1, y1 = 100, 200
+x2, y2 = 800, 600  # Add the second point
+
+#The user decides the line width
+lw = int(10)
+
+#Calculate the half line width
+hw = int(lw/2)
+
+# Setting the size of the canvas
+row = int(5/7*1080)
+col = int(5/7*1920)
+print('col, row =', col, ',', row)
+
+# Preparing the black canvas
+Gambar = np.zeros(shape=(row, col, 3), dtype=np.int16)
+
+# Calculate the slope and intercept of the line
+m = (y2 - y1) / (x2 - x1)
+b = y1 - m * x1
+
+# Coloring the points red (loop, condition, comparation)
+for x in range(min(x1, x2), max(x1, x2)):
+    for y in range(min(y1, y2), max(y1, y2)):
+        if abs(y - (m * x + b)) < hw:
+            Gambar[y, x, 0] = 255
+
+plt.figure()
+plt.imshow(Gambar)
+plt.show()
