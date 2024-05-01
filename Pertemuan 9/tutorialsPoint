@@ -1,0 +1,204 @@
+#CREATING GUI USING TKINTER
+import tkinter as tk
+#Jalankan code untuk tiap topik bergantian. Beri tanda # untuk topik yang
+#tidak dijalankan
+
+root = tk.Tk()
+
+#=========================================================================================================
+#-------------------------------------Latihan-1: Membuat Widget Dasar-------------------------------------
+#=========================================================================================================
+# WidgetDasarku = tk.Tk ()
+# WidgetDasarku.mainloop ()
+
+#=========================================================================================================
+#----------------------------------------Latihan-2: Membuat Canvas----------------------------------------
+#=========================================================================================================
+# Kanvasku = tk.Canvas(root, height = 1080, width = 1920)
+# Kanvasku.pack()
+#
+#
+#=========================================================================================================
+#----------------------------------------Latihan-3: Membuat Canvas----------------------------------------
+Frameku = tk.Frame(root, bg = 'blue')
+Frameku.place(relwidth = 0.8, relheight = 0.8)
+
+#=========================================================================================================
+#-------------------------------------Latihan-4a: Membuat Button Di Root----------------------------------
+#=========================================================================================================
+# Tombolku = tk.Button(root, text = "Tes Tombol", bg = 'gray', fg = 'red')
+# Tombolku.pack()
+
+#=========================================================================================================
+#-------------------------------------Latihan-4b: Membuat Button Di Frame----------------------------------
+#=========================================================================================================
+Tombolku = tk.Button(Frameku, text = "Tes Tombol", bg = 'gray', fg = 'red')
+Tombolku.pack()
+
+#=========================================================================================================
+#----------------------------------------Latihan-5: Membuat Entry----------------------------------------
+#=========================================================================================================
+Entryku = tk.Entry(Frameku, bg = 'green')
+Entryku.pack()
+
+#=========================================================================================================
+#----------------------------------------Latihan-6: Membuat Button----------------------------------------
+#=========================================================================================================
+from tkinter import *
+from tkinter import messagebox
+top = Tk()
+top.geometry("100x100")
+def helloCallBack():
+   msg=messagebox.showinfo( "Hello Python", "Hello World")
+B = Button(top, text ="Hello", command = helloCallBack)
+B.place(x=50,y=50)
+top.mainloop()
+
+#=========================================================================================================
+#--------------------------------------Latihan-7: Membuat Checkbutton-------------------------------------
+#=========================================================================================================
+from tkinter import *
+import tkinter
+
+top = Tk()
+CheckVar1 = IntVar()
+CheckVar2 = IntVar()
+C1 = Checkbutton(top, text = "Music", variable = CheckVar1, onvalue = 1, offvalue = 0, height=5, width = 20, )
+C2 = Checkbutton(top, text = "Video", variable = CheckVar2, onvalue = 1, offvalue = 0, height=5, width = 20)
+C1.pack()
+C2.pack()
+top.mainloop()
+
+#=========================================================================================================
+#----------------------------------------Latihan-8: Membuat Label-----------------------------------------
+#=========================================================================================================
+from tkinter import *
+root = Tk()
+var = StringVar()
+label = Label( root, textvariable=var, relief=RAISED )
+var.set("Hey!? How are you doing?")
+label.pack()
+root.mainloop()
+
+#=========================================================================================================
+#----------------------------------------Latihan-9: Membuat Frame-----------------------------------------
+#=========================================================================================================
+from tkinter import *
+
+root = Tk()
+frame = Frame(root)
+frame.pack()
+
+bottomframe = Frame(root)
+bottomframe.pack( side = BOTTOM )
+
+redbutton = Button(frame, text="Red", fg="red")
+redbutton.pack( side = LEFT)
+
+greenbutton = Button(frame, text="Brown", fg="brown")
+greenbutton.pack( side = LEFT )
+
+bluebutton = Button(frame, text="Blue", fg="blue")
+bluebutton.pack( side = LEFT )
+
+blackbutton = Button(bottomframe, text="Black", fg="black")
+blackbutton.pack( side = BOTTOM)
+
+root.mainloop()
+#=========================================================================================================
+#----------------------------------------Latihan-10: Membuat Menu---------------------------------------
+#=========================================================================================================
+from tkinter import *
+def donothing():
+   filewin = Toplevel(root)
+   button = Button(filewin, text="Do nothing button")
+   button.pack()
+
+root = Tk()
+menubar = Menu(root)
+filemenu = Menu(menubar, tearoff=0)
+filemenu.add_command(label="New", command=donothing)
+filemenu.add_command(label="Open", command=donothing)
+filemenu.add_command(label="Save", command=donothing)
+filemenu.add_command(label="Save as...", command=donothing)
+filemenu.add_command(label="Close", command=donothing)
+
+filemenu.add_separator()
+filemenu.add_command(label="Exit", command=root.quit)
+menubar.add_cascade(label="File", menu=filemenu)
+editmenu = Menu(menubar, tearoff=0)
+editmenu.add_command(label="Undo", command=donothing)
+editmenu.add_separator()
+editmenu.add_command(label="Cut", command=donothing)
+editmenu.add_command(label="Copy", command=donothing)
+editmenu.add_command(label="Paste", command=donothing)
+editmenu.add_command(label="Delete", command=donothing)
+editmenu.add_command(label="Select All", command=donothing)
+
+menubar.add_cascade(label="Edit", menu=editmenu)
+helpmenu = Menu(menubar, tearoff=0)
+helpmenu.add_command(label="Help Index", command=donothing)
+helpmenu.add_command(label="About...", command=donothing)
+menubar.add_cascade(label="Help", menu=helpmenu)
+
+root.config(menu=menubar)
+root.mainloop()
+
+#=========================================================================================================
+#-------------------------------------Latihan-11: Membuat Radiobutton-------------------------------------
+#=========================================================================================================
+from tkinter import *
+
+def sel():
+   selection = "You selected the option " + str(var.get())
+   label.config(text = selection)
+root = Tk()
+var = IntVar()
+R1 = Radiobutton(root, text="Option 1", variable=var, value=1, command=sel)
+R1.pack( anchor = W )
+R2 = Radiobutton(root, text="Option 2", variable=var, value=2, command=sel)
+R2.pack( anchor = W )
+R3 = Radiobutton(root, text="Option 3", variable=var, value=3, command=sel)
+R3.pack( anchor = W)
+label = Label(root)
+label.pack()
+root.mainloop()
+
+#=========================================================================================================
+#---------------------------------------Latihan-12: Membuat Listbox---------------------------------------
+#=========================================================================================================
+from tkinter import *
+
+top = Tk()
+
+Lb1 = Listbox(top)
+Lb1.insert(1, "Python")
+Lb1.insert(2, "Perl")
+Lb1.insert(3, "C")
+Lb1.insert(4, "PHP")
+Lb1.insert(5, "JSP")
+Lb1.insert(6, "Ruby")
+
+Lb1.pack()
+top.mainloop()
+
+#=========================================================================================================
+#----------------------------------------Latihan-13: Membuat Scale----------------------------------------
+#=========================================================================================================
+from tkinter import *
+def sel():
+   selection = "Value = " + str(var.get())
+   label.config(text = selection)
+
+root = Tk()
+var = DoubleVar()
+scale = Scale( root, variable = var )
+scale.pack(anchor=CENTER)
+
+button = Button(root, text="Get Scale Value", command=sel)
+button.pack(anchor=CENTER)
+
+label = Label(root)
+label.pack()
+
+root.mainloop()
